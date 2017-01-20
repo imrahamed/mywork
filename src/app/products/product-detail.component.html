@@ -1,0 +1,234 @@
+
+
+
+<div class='panel panel-primary' *ngIf='pro'>
+    <div class='panel-heading' style='font-size:large'>
+        
+        {{pro.colName}} 
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        
+<div> <b>Couselling Code : {{pro.colCode}} </b></div>
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        
+
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='fillrate && fillrate.length'>
+                   
+                <thead>
+                    <tr>
+                       <th> </th>
+                        
+                        <th>Date</th>
+                        <th>Session</th>
+                        <th>Seats Available</th>
+                        <th>Oc Seats Available</th>
+                        <th>Sc Available</th>
+                        <th>Bc Available</th>
+                        <th>Bcm Available</th>
+                        <th>Sca Available</th>
+                        <th>st Available</th>
+                        <th>mbc Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fr of fillrate;let first = first; let last = last" 
+    [ngClass]="{ first: first, last: last }">
+                        <td><b>{{first ? 'At the Begining' : last ? 'Current Status' : ""}}</b></td>
+                       
+                        <td>{{ fr.idate }}</td>
+                        <td>{{ fr.times  }}</td>
+                        <td>{{ fr.totsa   }}</td>
+                        <td>{{ fr.oc    }}</td>
+                        <td>{{ fr.sc   }}</td>
+                        <td>{{ fr.bc    }}</td>
+                        <td>{{ fr.bcm   }}</td>
+                        <td>{{ fr.sca   }}</td>
+                        <td>{{ fr.st   }}</td>
+                        <td>{{ fr.mbc    }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<button class='btn btn-danger'
+                                (click)='togglefull()'>
+                                {{showImage ? 'Hide' : 'Show'}} Full Status
+                            </button>
+<button class='btn btn-warning'
+                                (click)='togglefill()'>
+                                {{showImage ? 'Hide' : 'Show'}} Filling Rate
+                            </button>
+                            <button class='btn btn-primary'
+                                (click)='togglestart()'>
+                                {{showImage ? 'Hide' : 'Show'}} Start Date
+                            </button>
+
+<div class='panel panel-danger' *ngIf='overAll'>
+    <div class='panel-heading' style='font-size:large'>
+        
+        {{analytic + ': '}}
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        
+
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='products && products.length'>
+                   
+                <thead>
+                    <tr>
+                       
+                        
+                        <th>Date</th>
+                        <th>Session</th>
+                        <th>Seats Available</th>
+                        <th>Oc Seats Available</th>
+                        <th>Sc Available</th>
+                        <th>Bc Available</th>
+                        <th>Bcm Available</th>
+                        <th>Sca Available</th>
+                        <th>st Available</th>
+                        <th>mbc Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        
+                        <td>{{ product.idate}}</td>
+                        <td>{{ product.times }}</td>
+                        <td>{{ product.totsa  }}</td>
+                        <td>{{ product.oc   }}</td>
+                        <td>{{ product.sc   }}</td>
+                        <td>{{ product.bc  }}</td>
+                        <td>{{ product.bcm  }}</td>
+                        <td>{{ product.sca   }}</td>
+                        <td>{{ product.st  }}</td>
+                        <td>{{ product.mbc }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class='panel panel-warning' *ngIf='fill'>
+    <div class='panel-heading' style='font-size:large'>
+        
+        {{"Filling Rate :"}}
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        
+
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='products && products.length'>
+                   
+                <thead>
+                    <tr>
+                       
+                        
+                        <th>Date</th>
+                        <th>Session</th>
+                        <th>Seats Filled</th>
+                        <th>Oc Seats Filled</th>
+                        <th>Sc Filled</th>
+                        <th>Bc Filled</th>
+                        <th>Bcm Filled</th>
+                        <th>Sca Filled</th>
+                        <th>st Filled</th>
+                        <th>mbc Filled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let filling of fillings;let first = first; let last = last" 
+    [ngClass]="{ first: first, last: last }">
+                        
+                      
+                        <td>{{ filling.idate}}</td>
+                        <td>{{ filling.times }}</td>
+                        <td>{{ filling.totsa  }}</td>
+                        <td>{{ filling.oc   }}</td>
+                        <td>{{ filling.sc   }}</td>
+                        <td>{{ filling.bc  }}</td>
+                        <td>{{ filling.bcm  }}</td>
+                        <td>{{ filling.sca   }}</td>
+                        <td>{{ filling.st  }}</td>
+                        <td>{{ filling.mbc }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ <div class='panel panel-primary' *ngIf='start'>
+    <div class='panel-heading' style='font-size:large'>
+        
+        {{"Filling Started Date :"}}
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        
+
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='srt'>
+                   
+                <thead>
+                    <tr>
+                       
+                        
+                        <th> </th>
+                        <th>Seats Filling Start Date</th>
+                        <th>Oc Filling Start Date</th>
+                        <th>Sc Filling Start Date</th>
+                        <th>Bc Filling Start Date</th>
+                        <th>Bcm Filling Start Date</th>
+                        <th>Sca Filling Start Date</th>
+                        <th>st Filling Start Date</th>
+                        <th>mbc Filling Start Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of srt;let first = first; let last = last" 
+    [ngClass]="{ first: first, last: last }">
+                        
+                       
+                       <td><b> Starting Date </b></td> 
+                        <td>{{ s.ftotsa  }}</td>
+                        <td>{{ s.foc   }}</td>
+                        <td>{{ s.fsc   }}</td>
+                        <td>{{ s.fbc  }}</td>
+                        <td>{{ s.fbcm  }}</td>
+                        <td>{{ s.fsca   }}</td>
+                        <td>{{ s.fst  }}</td>
+                        <td>{{ s.fmbc }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+     

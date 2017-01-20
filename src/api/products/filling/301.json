@@ -1,0 +1,44 @@
+[
+    {
+   "colCode":339,
+   "colName":"Gurunanak College (A) , Velachery, Velachery Main Road, Velachery, Chennai-600 042",
+   "oc":3,
+   "bc":2,
+   "bcm":1,
+   "mbc":3,
+   "sc":3,
+   "sca":1,
+   "st":0,
+   "totsa":11,
+   "times":"6-00PM",
+   "idate":"2016-08-04"
+},
+{
+   "colCode":339,
+   "colName":"Gurunanak College (A) , Velachery, Velachery Main Road, Velachery, Chennai-600 042",
+   "oc":5,
+   "bc":5,
+   "bcm":0,
+   "mbc":3,
+   "sc":1,
+   "sca":0,
+   "st":0,
+   "totsa":13,
+   "times":"12-00NOON",
+   "idate":"2016-08-05"
+},
+{
+   "colCode":339,
+   "colName":"Gurunanak College (A) , Velachery, Velachery Main Road, Velachery, Chennai-600 042",
+   "oc":5,
+   "bc":5,
+   "bcm":0,
+   "mbc":3,
+   "sc":1,
+   "sca":0,
+   "st":0,
+   "totsa":0,
+   "times":"2-00PM",
+   "idate":"2016-08-05"
+}
+]
