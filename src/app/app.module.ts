@@ -4,11 +4,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
+import {AuthGuard} from './login/auth.guard'
 
 /* Feature Modules */
 import { ProductModule } from './products/product.module';
 import{LoginModule} from './login/login.module';
-
+import{RegisterModule} from './register/register.module'
 @NgModule({
   imports: [
     BrowserModule,
@@ -19,13 +20,17 @@ import{LoginModule} from './login/login.module';
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
     ProductModule,
-    LoginModule
+    LoginModule,
+    RegisterModule
     
   ],
   declarations: [
     AppComponent,
     WelcomeComponent
   ],
+  providers: [
+        AuthGuard
+    ],
   
   bootstrap: [ AppComponent ]
 })

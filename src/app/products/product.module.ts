@@ -7,6 +7,7 @@ import { ProductDetailGuard } from './product-guard.service';
 
 import { ProductFilterPipe } from './product-filter.pipe';
 import { ProductService } from './product.service';
+import{AuthGuard} from '../login/auth.guard'
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -14,9 +15,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     SharedModule,
     RouterModule.forChild([
-      { path: 'arts', component: ProductListComponent },
+      { path: 'arts', component: ProductListComponent, canActivate: [AuthGuard] },
       { path: 'product/:colCode',
-        component: ProductDetailComponent
+        component: ProductDetailComponent,canActivate: [AuthGuard] 
       }
     ])
   ],
