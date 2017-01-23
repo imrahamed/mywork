@@ -14,7 +14,7 @@ export class UserService {
         return this.http.post('http://192.168.1.142:8080/register', user)
 .map((response: Response) => {
                 // login successful if there's a jwt token in the response
-                let status = response.json() && response.json().token;
+                let status = response.json() && response.json().status;
                 if (status) {
                     // set token property
                     this.status = status;

@@ -1,20 +1,14 @@
 ﻿<div class="panel panel-success">
     <div class="panel-heading">
-        {{pageTitle}}
+     <h1>   {{pageTitle + " " +currentUser.username}} </h1>
     </div>
     <div class="panel-body"  >
-        <div class="row" >
-            <img src="http://www.placementseason.com/wp-content/uploads/2014/12/Logo-for-web2.png" 
-                 class="img-responsive center-block"
-                 style="max-height:900px;padding-bottom:50px"/>
-        </div>
+        
         <div class="row"  >
+           <a [routerLink]="['/arts']" class="btn btn-danger ">Arts College</a> 
             <div class="text-center">
-              <a [routerLink]="['/register']" class="btn btn-danger ">Register</a>
-              <a [routerLink]="['/login']" class="btn btn-warning ">Login</a>
+                <a [routerLink]="['/login']">LOGOUT</a>
             </div>
-            <div class="text-center">Developed by:</div>
-            <h3 class="text-center">imrahamed</h3>
         </div>
     </div>
 </div>
