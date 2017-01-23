@@ -11,7 +11,7 @@ import{Dates} from './dates'
 
 @Injectable()
 export class ProductService {
-    private _productUrl = 'http://127.0.0.1:3333/';
+    private _productUrl = 'http://127.0.0.1:880/';
 
     constructor(private _http: Http, private authenticationService: AuthenticationService) { }
 
